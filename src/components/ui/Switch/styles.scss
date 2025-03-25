@@ -1,0 +1,97 @@
+.switch-container {
+    width: 50px;
+    height: 28px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s;
+    color: black;
+
+    &.absolute {
+        position: absolute;
+    }
+}
+
+.switch-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.switch-circle.active {
+    transform: translateX(22px);
+}
+
+.circle-icon {
+    font-size: 12px;
+}
+
+.table-switch {
+    background: rgb(var(--v-theme-background));
+    outline: 1px solid rgb(var(--v-theme-tertiary));
+    border-radius: 4px;
+    display: flex;
+    height: 32px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 1px;
+        height: 100%;
+        background-color: rgb(var(--v-theme-tertiary));
+        left: 50%;
+    }
+    > * {
+        width: 32px;
+        position: relative;
+        display: grid;
+        place-items: center;
+        justify-content: center;
+        span {
+            transition: background-color .3s;
+            background-color: rgb(var(--v-theme-secondary));
+            display: block;
+        }
+    }
+    .active {
+        background: rgb(var(--v-theme-accent)) !important;
+    }
+    .dots {
+        grid-template-columns: 4px 4px;
+        gap: 2px;
+        height: fit-content;
+        span {
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+        }
+    }
+    .lines {
+        grid-template-columns: auto;
+        row-gap: 2px;
+        span {
+            width: 10px;
+            height: 2px;
+            border-radius: 2px;
+        }
+    }
+}
+
+.lg .table-switch {
+    height: 50px;
+    border-radius: 12px;
+    > * {
+        width: 40px;
+    }
+}

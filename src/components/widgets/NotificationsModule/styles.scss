@@ -1,0 +1,66 @@
+.notification {
+  height: 44px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  cursor: pointer;
+}
+.bell{
+  position: relative;
+  left: 12px;
+}
+.unread-number {
+  border: solid rgb(var(--v-theme-accent));
+  background-color: white;
+  border-radius: 100px;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  font-size: 14px;
+  font-weight: 600;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(var(--v-theme-accent));
+}
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  padding-bottom: 8px;
+  @media screen and (min-width: 960px) {
+    flex-direction: row-reverse;
+    padding-bottom: 20px;
+}
+}
+.date-stamp {
+  color: rgb(var(--v-theme-secondary));
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.read-all-button {
+  text-decoration: underline;
+  color: rgb(var(--v-theme-secondary));
+  cursor: pointer;
+}
+.filter-chip {
+  border-radius: 1px !important;
+}
+.filter-selected {
+  border-radius: 100px !important;
+  background-color: rgb(var(--v-theme-accent)) !important;
+}
+.notification-empty {
+  .animate {
+    width: min(300px, 100%);
+    margin: 50px auto 15px auto;
+  }
+  p, h2 {
+    text-align: center;
+    white-space: balance;
+    text-wrap: balance;
+  }
+}

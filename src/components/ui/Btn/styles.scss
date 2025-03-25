@@ -1,0 +1,64 @@
+.button {
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    border-radius: 16px;
+    box-shadow: var(--v-shadow-input);
+    text-transform: none;
+    padding-left: 12px;
+    padding-right: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    &.icon-only-button {
+        border-radius: 100% !important;
+        width: 50px;
+        height: 50px;
+        &.size-sm {
+            width: 40px;
+            height: 40px;
+        }
+        .size-lg {
+            width: 60px;
+            height: 60px;
+        }
+    }
+
+    &.btn-block {
+        width: 100%;
+    }
+
+    &:disabled {
+        background-color: rgb(var(--v-theme-addition)) !important;
+        color: rgb(var(--v-theme-white)) !important;
+    }
+}
+
+.size-sm {
+    height: 40px;
+    font-size: 16px;
+    line-height: 125%;
+}
+
+.prepend-icon {
+    font-size: 16px;
+}
+
+.size-md {
+    height: 50px;
+    font-size: 18px;
+    line-height: 150%;
+
+    @media screen and (min-width: 960px) {
+        height: 50px;
+        font-size: 20px;
+        line-height: 135%;
+    }
+}
+
+.size-lg {
+    height: 50px;
+    font-size: 18px;
+}

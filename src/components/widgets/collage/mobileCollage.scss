@@ -1,0 +1,29 @@
+.collage-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.collage-item {
+    position: relative;
+    flex: 1 1 125px;
+    /* Уменьшение размеров при необходимости */
+    max-width: 125px;
+    /* Максимальная ширина */
+    max-height: 125px;
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: 12px;
+
+    @media screen and (min-width: 960px) {
+        border-radius: 32px;
+    }
+}
+
+.collage-item>* {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}

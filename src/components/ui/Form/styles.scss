@@ -1,0 +1,100 @@
+.form {
+  width: 100%;
+  background-color: rgb(var(--v-theme-background));
+
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+
+  &--padding-30 {
+    padding-top: 0px;
+    padding-bottom: 30px;
+
+    @media screen and (min-width: 960px) {
+      padding-top: 30px;
+    }
+  }
+
+  &--padding-0 {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  &--padding-bottom-20 {
+    padding-bottom: 20px;
+  }
+
+  > .form_header {
+    padding-top: 13px;
+    padding-bottom: 13px;
+    box-shadow: var(--v-shadow-input);
+
+    @media screen and (min-width: 960px) {
+      box-shadow: none;
+    }
+
+    &--padding-0 {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    &--padding-32 {
+      padding-left: 32px;
+      padding-right: 32px;
+      @media screen and (max-width: 768px) {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+  }
+
+  > .form_content {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    overflow-y: auto;
+
+    &--padding-0 {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    &--padding-32 {
+      padding-left: 32px;
+      padding-right: 32px;
+
+      @media screen and (max-width: 768px) {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+
+    &--padding-20 {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  > .form_footer {
+    margin-top: auto;
+
+    &--padding-0 {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    &--padding-32 {
+      padding-left: 32px;
+      padding-right: 32px;
+      @media screen and (max-width: 768px) {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+
+    &--padding-20 {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+}

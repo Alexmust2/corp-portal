@@ -1,0 +1,14 @@
+.alert-block {
+	padding: 12px;
+	background-color: rgb(var(--v-theme-tertiary));
+	border-radius: 20px 20px 20px 4px !important;
+	margin-bottom: 8px;
+	margin-right: auto;
+	display: inline-block;
+
+}
+
+.text-wrapper {
+	display: flex;
+	align-items: end;
+}

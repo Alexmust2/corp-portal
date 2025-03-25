@@ -1,0 +1,24 @@
+.faq-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  min-height: 58px;
+  padding: 12px;
+  border-radius: 12px;
+
+  @media screen and (min-width: 960px) {
+    height: 100px;
+}
+}
+
+
+.faq-text {
+  padding: 12px;
+  color: rgb(var(--v-theme-secondary));
+}
+
+.faq-icon {
+  padding-left: 8px;
+  color: rgb(var(--v-theme-secondary));
+}

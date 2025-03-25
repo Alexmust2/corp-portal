@@ -1,0 +1,101 @@
+.wrapper {
+    background-color: rgb(var(--v-theme-background));
+    height: 100dvh !important;
+
+    @media screen and (min-width: 960px) {
+        padding: 35px;
+    }
+
+    >.left-side {
+        width: 100%;
+        margin: 0 auto;
+        height: 100%;
+
+        @media screen and (min-width: 960px) {
+            width: 40%;
+            height: auto;
+        }
+
+        .card {
+            padding: 30px 20px;
+            height: 100%;
+
+            @media screen and (min-width: 960px) {
+                height: auto;
+                border-radius: 20px;
+                box-shadow: var(--v-shadow-input);
+                border: 1px solid rgb(var(--v-theme-tertiary));
+                max-width: 650px;
+            }
+        }
+
+        :deep(.form_header) {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 60px;
+
+            .title {
+                position: relative;
+                display: flex;
+            }
+
+            h1 {
+                margin: 0 auto;
+            }
+
+            button {
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+
+        :deep(.form-group) {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 8px;
+
+            @media screen and (max-width: 959px) {
+                // flex: 1 1 auto;
+            }
+        }
+    }
+
+    >.right-side {
+        width: 48%;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+:deep(.error) {
+   color: rgb(var(--v-theme-red));
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+
+    @media screen and (min-width: 960px) {
+        height: auto;
+    }
+
+    :deep(.form-actions) {
+        @media screen and (max-width: 959px) {
+            position: sticky;
+            bottom: 0;
+        }
+    }
+}
+
+:deep(.form) {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}

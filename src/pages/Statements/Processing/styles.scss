@@ -1,0 +1,43 @@
+.block {
+  padding: 0px 20px;
+}
+.statement-card-type{
+  display: -webkit-box;      
+  -webkit-box-orient: vertical; 
+  overflow: hidden;            
+  text-overflow: ellipsis;     
+  line-clamp: 2;               
+  -webkit-line-clamp: 2;       
+  line-height: 1.5;            
+  max-height: calc(1.5em * 2);
+}
+.last-changes{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.statement-header {
+  margin-bottom: 20px;
+  height: 94px;
+  border-bottom: 1px solid rgb(var(--v-theme-tertiary));
+  display: flex;
+  align-items: center;
+}
+.processing-card {
+  cursor: pointer;
+  padding: 16px;
+  height: 180px;
+}
+.date-text {
+  color: rgb(var(--v-theme-secondary));
+  min-width: 150px; // Минимальная ширина для текста даты
+  text-align: right; // Выравнивание даты по правому краю
+  white-space: nowrap;
+}
+
+.chip {
+  font-size: 16px;
+@media screen and (max-width: 959px) {
+  font-size: 14px;
+}
+}

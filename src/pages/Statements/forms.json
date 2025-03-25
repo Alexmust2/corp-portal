@@ -1,0 +1,500 @@
+{
+  "Офис-менеджеры": {
+    "permission": "office_managers_access",
+    "statements": {
+      "Заказ канцелярских товаров": [
+        {
+          "type": "c-select",
+          "name": "psk",
+          "attrs": {
+            "label": "ПСК",
+            "items": ["ПСК1", "ПСК4", "ПСК5", "Котельная", "АБК"],
+            "required": true,
+            "data-cy": "psk-select"
+          }
+        },
+        {
+          "type": "c-input",
+          "name": "room",
+          "attrs": {
+            "label": "Кабинет",
+            "required": true,
+            "data-cy": "room-input"
+          }
+        },
+        {
+          "type": "c-table-input",
+          "name": "consumables_list",
+          "requiredOne": [
+            "production_necessity_list",
+            "consumables_list",
+            "equipment_list"
+          ],
+          "isHeaderContent": true,
+          "headerContentClass": "order-goods",
+          "attrs": {
+            "columns": [
+              {
+                "name": "name",
+                "label": "Расходники",
+                "required": true,
+                "placeholder": "Название",
+                "col": "6"
+              },
+              {
+                "name": "quantity",
+                "label": "",
+                "type": "number",
+                "min": 0,
+                "max": 99,
+                "required": true,
+                "col": "3"
+              },
+              {
+                "name": "article",
+                "label": "",
+                "required": true,
+                "placeholder": "Артикул",
+                "col": "3"
+              }
+            ]
+          }
+        },
+        {
+          "type": "c-table-input",
+          "name": "equipment_list",
+          "requiredOne": [
+            "production_necessity_list",
+            "consumables_list",
+            "equipment_list"
+          ],
+          "isToggled": false,
+          "toggleLabel": "Оборудование",
+          "isHeaderContent": true,
+          "headerContentClass": "order-goods",
+          "attrs": {
+            "columns": [
+              {
+                "name": "name",
+                "label": "Оборудование",
+                "required": true,
+                "placeholder": "Название",
+                "col": "6"
+              },
+              {
+                "name": "quantity",
+                "label": "",
+                "type": "number",
+                "min": 0,
+                "max": 99,
+                "required": true,
+                "col": "3"
+              },
+              {
+                "name": "article",
+                "label": "",
+                "required": true,
+                "placeholder": "Артикул",
+                "col": "3"
+              }
+            ]
+          }
+        },
+        {
+          "type": "c-table-input",
+          "name": "production_necessity_list",
+          "requiredOne": [
+            "production_necessity_list",
+            "consumables_list",
+            "equipment_list"
+          ],
+          "isToggled": false,
+          "toggleLabel": "Производственная необходимость",
+          "isHeaderContent": true,
+          "headerContentClass": "order-goods",
+          "attrs": {
+            "columns": [
+              {
+                "name": "name",
+                "label": "Продукция",
+                "required": true,
+                "placeholder": "Название",
+                "col": "6"
+              },
+              {
+                "name": "quantity",
+                "label": "",
+                "type": "number",
+                "min": 0,
+                "max": 99,
+                "required": true,
+                "col": "3"
+              },
+              {
+                "name": "article",
+                "label": "",
+                "required": true,
+                "placeholder": "Артикул",
+                "col": "3"
+              }
+            ]
+          }
+        },
+        {
+          "type": "c-textarea",
+          "name": "additional_comments",
+          "attrs": {
+            "label": "Дополнительные комментарии",
+            "required": false,
+            "data-cy": "additional-comments-textarea"
+          }
+        }
+      ],
+      "Заказ курьера": [
+        {
+          "type": "c-date-input",
+          "name": "deadline",
+          "attrs": {
+            "label": "Дедлайн",
+            "required": true,
+            "data-cy": "deadline-input",
+            "upwards": true
+          }
+        },
+        {
+          "type": "c-input",
+          "name": "organization_name",
+          "attrs": {
+            "label": "Название организации",
+            "required": true,
+            "data-cy": "organization-name-input"
+          }
+        },
+        {
+          "type": "c-input",
+          "name": "contact_person",
+          "attrs": {
+            "label": "Контактное лицо",
+            "required": true,
+            "data-cy": "contact-person-input"
+          }
+        },
+        {
+          "type": "c-input",
+          "name": "phone",
+          "maska": "+7 (###) ###-##-##",
+          "attrs": {
+            "label": "Телефон",
+            "required": true,
+            "data-cy": "phone-input"
+          }
+        },
+        {
+          "type": "c-input",
+          "name": "exact_address",
+          "attrs": {
+            "label": "Точный адрес",
+            "required": true,
+            "data-cy": "exact-address-input"
+          }
+        },
+        {
+          "type": "c-input",
+          "name": "metro",
+          "attrs": {
+            "label": "Метро",
+            "required": false,
+            "data-cy": "metro-input"
+          }
+        },
+        {
+          "type": "c-textarea",
+          "name": "directions",
+          "attrs": {
+            "label": "Как добраться",
+            "required": true,
+            "data-cy": "directions-textarea"
+          }
+        },
+        {
+          "type": "c-textarea",
+          "name": "courier_task",
+          "attrs": {
+            "label": "Задача курьера (дополнительная важная информация)",
+            "required": true,
+            "data-cy": "courier-task-textarea"
+          }
+        }
+      ],
+      "Устранение технических неисправностей": [
+        {
+          "type": "c-select",
+          "name": "psk",
+          "attrs": {
+            "label": "ПСК",
+            "items": ["ПСК1", "ПСК4", "ПСК5", "Котельная", "АБК"],
+            "required": true,
+            "data-cy": "psk-select"
+          }
+        },
+        {
+          "type": "c-input",
+          "name": "room",
+          "attrs": {
+            "label": "Кабинет",
+            "required": true,
+            "data-cy": "room-input"
+          }
+        },
+        {
+          "type": "c-textarea",
+          "name": "issue",
+          "attrs": {
+            "label": "Неполадка",
+            "required": true,
+            "data-cy": "issue-textarea"
+          }
+        },
+        {
+          "type": "c-textarea",
+          "name": "desired_changes",
+          "attrs": {
+            "label": "Перечень желаемых изменений",
+            "required": true,
+            "data-cy": "desired-changes-textarea"
+          }
+        },
+        {
+          "type": "c-date-input",
+          "name": "planned-completing-date",
+          "attrs": {
+            "label": "Планируемая дата выполнения",
+            "admin-only": true,
+            "data-cy": "planned-completing-date-input"
+          }
+        },
+        {
+          "type": "c-date-input",
+          "name": "actual-completing-date",
+          "attrs": {
+            "label": "Фактическая дата выполнения",
+            "admin-only": true,
+            "data-cy": "actual-completing-date-input"
+          }
+        }
+      ],
+      "Бронирование билетов": [
+        {
+          "type": "c-input",
+          "name": "contact_phone",
+          "maska": "+7 (###) ###-##-##",
+          "attrs": {
+            "label": "Контактный телефон",
+            "required": true,
+            "data-cy": "contact-phone-input"
+          }
+        },
+        {
+          "type": "c-input",
+          "name": "departure",
+          "attrs": {
+            "label": "Город отправления",
+            "required": true,
+            "data-cy": "departure-city-input"
+          }
+        },
+        {
+          "type": "c-input",
+          "name": "destination",
+          "attrs": {
+            "label": "Город прибытия",
+            "required": true,
+            "data-cy": "destination-input"
+          }
+        },
+        {
+          "type": "c-input",
+          "name": "stations_or_airport",
+          "attrs": {
+            "label": "Вокзал/аэропорт",
+            "required": true,
+            "data-cy": "stations-or-airport-input"
+          }
+        },
+        {
+          "type": "c-date-input",
+          "name": "departure_date",
+          "attrs": {
+            "label": "Даты выезда/вылета",
+            "required": true,
+            "data-cy": "departure-date-input",
+            "upwards": true
+          }
+        },
+        {
+          "type": "c-input",
+          "name": "departure_time",
+          "maska": "##:##",
+          "attrs": {
+            "label": "Время выезда/вылета",
+            "required": true,
+            "data-cy": "departure-time-input"
+          }
+        },
+        {
+          "type": "c-input",
+          "name": "passport_series",
+          "maska": "####",
+          "attrs": {
+            "label": "Паспортные данные (серия)",
+            "required": true,
+            "data-cy": "passport-series-input",
+            "maxlength": 4
+          }
+        },
+        {
+          "type": "c-input",
+          "name": "passport_number",
+          "maska": "######",
+          "attrs": {
+            "label": "Паспортные данные (номер)",
+            "required": true,
+            "data-cy": "passport-number-input",
+            "maxlength": 6
+          }
+        },
+        {
+          "type": "c-date-input",
+          "name": "passport_issue_date",
+          "attrs": {
+            "label": "Паспортные данные (дата выдачи)",
+            "required": true,
+            "data-cy": "passport-issue-date-input",
+            "downwards": true
+          }
+        },
+        {
+          "type": "c-input",
+          "name": "passport_birthplace",
+          "attrs": {
+            "label": "Паспортные данные (место рождения)",
+            "required": true,
+            "data-cy": "passport-birthplace-input"
+          }
+        },
+        {
+          "type": "c-date-input",
+          "name": "passport_birthdate",
+          "attrs": {
+            "label": "Паспортные данные (дата рождения)",
+            "required": true,
+            "data-cy": "passport-birthdate-input",
+            "downwards": true
+          }
+        },
+        {
+          "type": "c-textarea",
+          "name": "additional_comments",
+          "attrs": {
+            "label": "Дополнительные комментарии",
+            "placeholder": "условия проживания, расположение гостиницы и т.д.",
+            "required": true,
+            "data-cy": "additional-comments-textarea"
+          }
+        },
+        {
+          "type": "c-input",
+          "name": "approved_by",
+          "attrs": {
+            "label": "Командировка согласована с:",
+            "required": true,
+            "data-cy": "approved-by-input"
+          }
+        }
+      ],
+      "Бронирование гостиницы": [
+        {
+          "type": "c-input",
+          "name": "contact_phone",
+          "maska": "+7 (###) ###-##-##",
+          "attrs": {
+            "label": "Контактный телефон",
+            "required": true,
+            "data-cy": "contact-phone-input"
+          }
+        },
+        {
+          "type": "c-input",
+          "name": "departure_city",
+          "attrs": {
+            "label": "Место командироваки",
+            "required": true,
+            "data-cy": "departure-city-input"
+          }
+        },
+        {
+          "type": "c-date-input",
+          "name": "hotel_arrival_date",
+          "col": 6,
+          "attrs": {
+            "label": "Дата прибытия",
+            "required": true,
+            "data-cy": "hotel-arrival-date-input",
+            "upwards": true
+          }
+        },
+        {
+          "type": "c-date-input",
+          "name": "hotel_departure_date",
+          "col": 6,
+          "attrs": {
+            "label": "Даты выезда",
+            "required": true,
+            "data-cy": "hotel-departure-date-input",
+            "upwards": true
+          }
+        },
+        {
+          "type": "c-input",
+          "name": "arrival_time",
+          "maska": "##:##",
+          "col": 6,
+          "attrs": {
+            "label": "Время приезда",
+            "required": true,
+            "data-cy": "departure-time-input_"
+          }
+        },
+        {
+          "type": "c-input",
+          "name": "departure_time",
+          "maska": "##:##",
+          "col": 6,
+          "attrs": {
+            "label": "Время выезда",
+            "required": true,
+            "data-cy": "departure-time-input"
+          }
+        },
+        {
+          "type": "c-textarea",
+          "name": "additional_comments",
+          "attrs": {
+            "label": "Дополнительные комментарии",
+            "required": true,
+            "data-cy": "additional-comments-textarea"
+          }
+        },
+        {
+          "type": "c-input",
+          "name": "approved_by",
+          "attrs": {
+            "label": "Командировка согласована с:",
+            "required": true,
+            "data-cy": "approved-by-input"
+          }
+        }
+      ]
+    }
+  }
+}

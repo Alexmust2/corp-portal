@@ -1,0 +1,15 @@
+.c-textarea {
+  width: 100%;
+  min-height: 100px;
+  resize: vertical;
+  outline: none;
+  padding: 12px;
+
+
+  &:focus {
+    border-color: rgb(var(--v-theme-accent));
+  }
+  &.no-resize {
+    resize: none;
+  }
+}

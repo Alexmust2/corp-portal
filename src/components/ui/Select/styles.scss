@@ -1,0 +1,90 @@
+.c-select-wrapper {
+  flex: 1 1 auto;
+}
+
+
+.c-select {
+  :deep(.v-field__input) {
+    height: 50px;
+    flex-wrap: nowrap;
+    gap: 4px;
+    overflow: clip;
+  }
+  &.label-active {
+    :deep(.v-field__input) {
+      height: 50px;
+      padding-top: 0;
+    }
+    .select-label {
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 18px;
+    }
+    &.has-value,
+    :deep(.v-field--dirty),
+    :deep(.v-field--focused) {
+      :deep(.v-field__input) {
+        min-height: 99px;
+        padding-top: 24px;
+      }
+      .select-label {
+        top: 12px;
+        transform: translateY(0);
+        font-size: 18px;
+      }
+    }
+    :deep(.v-field--active .select-label),
+    :deep(.v-field--focused .select-label),
+    :deep(.v-field--dirty .select-label) {
+      font-size: 18px;
+      top: 12px;
+      transform: translateY(0);
+    }
+
+    :deep(.v-field--dirty .v-field__input),
+    :deep(.v-field--focused .v-field__input) {
+      min-height: 99px;
+      padding-top: 24px;
+    }
+  }
+  .select-label {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: top 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+      transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+      font-size 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) 0.1s;
+    pointer-events: none;
+    font-size: 18px;
+    font-family: "Raleway";
+    font-weight: 600;
+    line-height: 27px;
+    color: rgba(62, 62, 62, 1);
+  }
+
+  .v-field__append-inner .v-icon {
+    transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &.v-select--active-menu .v-field__append-inner .v-icon {
+    transform: rotate(180deg);
+  }
+
+  &.v-combobox--active-menu .v-field__append-inner .v-icon {
+    transform: rotate(180deg);
+  }
+
+  :deep(.v-select__menu-icon) {
+    display: none;
+  }
+
+  :deep(.v-combobox__menu-icon) {
+    display: none;
+  }
+
+  .not-animated {
+    transform: none !important;
+    transition: none !important;
+  }
+}

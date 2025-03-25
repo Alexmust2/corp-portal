@@ -1,0 +1,20 @@
+.button-group {
+    border: 1px solid rgb(var(--v-theme-tertiary));
+    display: flex;
+    border-radius: 32px;
+    overflow: clip;
+    button {
+        font-size: 16px;
+        &:first-child {
+            padding-inline: 20px 15px;
+            outline: 1px solid rgb(var(--v-theme-tertiary));
+        }
+        &:last-child {
+            padding-inline: 15px 20px ;
+        }
+        &.active {
+            color: rgb(var(--v-theme-accent));
+            font-weight: 600;
+        }
+    }
+}

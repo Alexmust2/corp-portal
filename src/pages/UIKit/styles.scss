@@ -1,0 +1,24 @@
+:deep(.v-expansion-panel-text__wrapper) {
+  overflow-x: auto;
+}
+
+.example {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  outline: none;
+}
+
+.title {
+  .hash {
+    visibility: hidden;
+    color: rgb(var(--v-theme-accent));
+  }
+
+  &:hover {
+    .hash {
+      visibility: visible;
+    }
+  }
+}

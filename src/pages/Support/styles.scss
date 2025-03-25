@@ -1,0 +1,61 @@
+.paragraph {
+  white-space: balance;
+  text-wrap: balance;
+  @media screen and (max-width: 1200px) {
+    font-size: 16px;
+  }
+}
+
+.wrapper {
+  height: 800px;
+}
+
+.block_form {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+    align-items: start;
+    @media screen and (min-width: 960px) {
+      padding: 30px 60px;
+      padding-inline: clamp(1.875rem, -5.5861rem + 12.4481vw, 3.75rem);
+      flex-direction: row;
+      align-items: center;
+      height: 411px;
+    }
+    .button {
+      border-radius: 12px;
+      white-space: nowrap;
+    }
+  }
+  .block-faq {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    @media screen and (min-width: 960px) {
+      padding: 30px;
+    }
+  }
+  .faq-list{
+    display: flex;
+  }
+  .animate {
+    max-width: 625px;
+  }
+  .form-item h2 {
+    margin-bottom: 12px;
+  }
+
+
+  .faq-wrapper {
+    --gap: 16px;
+    display: grid;
+    gap: var(--gap);
+    grid-template-columns: 1fr 1fr;
+    .faq-col {
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap);
+    }
+  }

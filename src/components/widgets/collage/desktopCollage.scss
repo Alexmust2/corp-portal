@@ -1,0 +1,67 @@
+.collage-container {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(3, 260px);
+    grid-auto-rows: 260px;
+    width: 840px;
+    height: 1126px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.collage-item {
+    position: relative;
+    width: 260px;
+    height: 260px;
+    overflow: hidden;
+
+    @media screen and (min-width: 960px) {
+        border-radius: 32px;
+    }
+}
+
+.collage-item.span-2 {
+    width: 550px;
+    grid-column: span 2;
+}
+
+@media (max-width: 1750px) {
+    .collage-container {
+        grid-template-columns: repeat(2, 260px);
+        width: calc(2 * 260px + 30px);
+        height: calc(3 * 260px + 2 * 30px);
+    }
+
+    .collage-item.span-2 {
+        width: 260px;
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 1300px) {
+    .collage-container {
+        grid-template-columns: 260px;
+        width: 260px;
+        height: calc(2 * 260px + 30px);
+    }
+}
+
+@media (max-height: 1100px) {
+    .collage-container {
+        height: calc(3 * 260px + 2 * 30px);
+    }
+}
+
+@media (max-height: 800px) {
+    .collage-container {
+        height: calc(2 * 260px + 30px);
+    }
+}
+
+.collage-item>* {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}

@@ -1,0 +1,15 @@
+.c-input-wrapper {
+    flex: 1;
+}
+
+.c-input {
+    :deep(.v-text-field__prefix) {
+        margin: auto 0;
+        color: rgb(var(--v-theme-primary));
+    }
+
+    :deep(input) {
+        height: 50px;
+
+    }
+}

@@ -1,0 +1,148 @@
+.c-base {
+  position: relative;
+  overflow: hidden;
+}
+
+.c-adaptive {
+  @extend .c-base;
+
+  border-radius: 12px;
+
+  height: 100%;
+  width: 100%;
+
+  .c-element {
+    margin: 10%;
+  }
+
+  .c-text {
+    @extend .c-element;
+
+    font-family: 'Raleway';
+    font-size: 14px;
+  }
+
+  .c-icon {
+    @extend .c-element;
+
+    font-size: 200%;
+  }
+}
+
+.c-medium {
+  @extend .c-base;
+
+  border-radius: 12px;
+
+  height: 130px;
+  width: 130px;
+
+  .c-element {
+    margin: 12px;
+  }
+
+  .c-text {
+    @extend .c-element;
+
+    font-family: 'Raleway';
+    font-size: 14px;
+  }
+
+  .c-icon {
+    @extend .c-element;
+
+    font-size: 24px;
+  }
+}
+
+.c-large {
+  @extend .c-base;
+
+  border-radius: 32px;
+
+  height: 260px;
+  width: 260px;
+
+  .c-element {
+    margin: 32px;
+  }
+
+  .c-text {
+    @extend .c-element;
+
+    font-family: 'Raleway';
+    font-size: 22px;
+  }
+
+  .c-icon {
+    @extend .c-element;
+
+    font-size: 32px;
+  }
+}
+
+.c-wide {
+  .c-adaptive {
+    width: 210%;
+
+    border-radius: 2vh;
+
+    .c-image {
+      border-radius: 2vh;
+    }
+  }
+
+  .c-medium {
+    width: 275px;
+  }
+
+  .c-large {
+    width: 552px;
+  }
+}
+
+.c-top-left {
+  top: 0;
+  left: 0;
+}
+
+.c-top-center {
+  top: 0;
+  left: 50%;
+}
+
+.c-top-right {
+  top: 0;
+  right: 50%;
+}
+
+.c-bottom-left {
+  bottom: 0;
+  left: 0;
+}
+
+.c-bottom-center {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.c-bottom-right {
+  bottom: 0;
+  right: 0;
+}
+
+span,
+.v-icon {
+  position: absolute;
+}
+
+@media (min-width: 1408px) and (min-height: 768px) {
+  .c-adaptive {
+    border-radius: 32px;
+
+    .c-text {
+      font-size: 22px;
+    }
+  }
+}

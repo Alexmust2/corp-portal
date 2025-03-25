@@ -1,0 +1,219 @@
+.block {
+  height: 100%;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+}
+
+.calendar-header {
+  flex: 0 0 auto;
+  :deep(.v-field__input) {
+    height: 40px !important;
+  }
+}
+
+.custom-day-header {
+  flex: 0 0 auto;
+  padding: 16px;
+  .day-header {
+    cursor: pointer;
+  }
+  @media screen and (max-width: 960px) {
+    box-shadow: var(--v-shadow-input);
+    padding: 8px 9px 8px 9px;
+    .day-header {
+      border-bottom-width: 0px !important;  
+    }
+  }
+}
+
+.fc {
+  flex: 1 1 auto;
+  width: 100%;
+  height: 100%;
+}
+
+.fc :deep(.fc-timegrid-slot) {
+  margin-left: 20px !important;
+  border-right: 2px dashed rgb(var(--v-theme-secondary));
+}
+.fc-theme-standard :deep(td) {
+  @media screen and (max-width: 959px) {
+    border-bottom: 0px solid transparent !important;
+  }
+}
+.fc :deep(td[role="gridcell"]) {
+  border-width: 2px !important;
+}
+
+.calendar-header {
+  padding: 16px;
+  color: rgb(var(--v-theme-secondary));
+
+  @media screen and (min-width: 960px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(var(--v-theme-tertiary));
+  }
+
+  .default-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    @media screen and (min-width: 960px) {
+      gap: clamp(0.625rem, 11.111vw - 6.042rem, 1.25rem);
+    }
+  }
+
+  .title {
+    &::first-letter {
+      text-transform: uppercase;
+    }
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+    @media screen and (min-width: 960px) {
+      font-size: 18px;
+    }
+
+    @media screen and (min-width: 1050px) {
+      font-size: inherit;
+    }
+  }
+
+  .c-select-wrapper {
+    @media screen and (min-width: 960px) {
+      font-size: 14px;
+    }
+
+    @media screen and (min-width: 1050px) {
+      font-size: inherit;
+    }
+  }
+}
+
+.day-header-wrap {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-inline: 6px;
+  @media screen and (min-width: 960px) {
+    border-bottom: 1px solid rgb(var(--v-theme-tertiary));
+    padding-inline: 0;
+  }
+}
+
+.custom-day-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+
+  &.day-mode {
+    @media screen and (min-width: 960px) {
+      justify-content: inherit;
+      display: flex;
+      width: 100%;
+      // rearrange on day view
+      .day-header {
+        order: -1;
+      }
+      .time-header {
+        order: -2;
+      }
+      .arrows-prev {
+        margin-left: auto;
+        justify-content: end;
+        width: 100%;
+      }
+      .arrows {
+        align-items: center;
+      }
+      .single-day-picker {
+        border-bottom: 1px solid rgb(var(--v-theme-tertiary));
+        :deep(.v-field__input) {
+          cursor: pointer !important;
+        }
+      }
+
+      .day-header {
+        flex: none;
+        justify-content: center;
+
+        :deep(.v-field) {
+          border-radius: 70px;
+        }
+
+        :deep(input) {
+          width: 180px;
+          text-align: center;
+          color: rgb(var(--v-theme-accent));
+        }
+      }
+    }
+  }
+
+  .time-header {
+    width: 52px;
+    display: flex;
+    align-items: center;
+    color: rgb(var(--v-theme-secondary));
+  }
+
+  .day-header {
+    text-align: center;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 91px;
+    // border-bottom: 1px solid rgb(var(--v-theme-tertiary));
+
+    .weekday {
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      font-size: 16px;
+      font-weight: 600;
+      color: rgb(var(--v-theme-addition));
+
+      &.today {
+        color: rgb(var(--v-theme-accent));
+      }
+    }
+
+    .day {
+      width: 32px;
+      height: 32px;
+      line-height: 32px;
+      border-radius: 50%;
+      margin: 0 auto;
+      cursor: pointer;
+      font-weight: 400;
+      color: rgb(var(--v-theme-primary));
+
+      &.today {
+        background-color: rgb(var(--v-theme-accent));
+        color: rgb(var(--v-theme-white));
+      }
+    }
+  }
+}
+
+.arrows {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  color: rgb(var(--v-theme-secondary));
+  border-bottom: 1px solid rgb(var(--v-theme-tertiary));
+  padding-bottom: 3px;
+  .arrow {
+    &:hover {
+      color: rgb(var(--v-theme-accent));
+    }
+  }
+}
+

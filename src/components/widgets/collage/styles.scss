@@ -1,0 +1,26 @@
+.collage-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  height: 100%;
+}
+
+.collage-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  text-align: center;
+  background-color: #f9f9f9;
+  overflow: hidden;
+  border-radius: 12px;
+
+  @media screen and (min-width: 960px) {
+    border-radius: 32px;
+  }
+
+
+  &.span-2 {
+    grid-column: span 2;
+  }
+}

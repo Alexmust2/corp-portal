@@ -1,0 +1,152 @@
+.h1 {
+  @media screen and (min-width: 960px) {
+    font-size: 56px;
+  }
+}
+.h2 {
+  @media screen and (min-width: 960px) {
+    font-size: 40px;
+  }
+}
+
+// Основные стили контейнеров
+.page-container {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
+}
+
+.content-container {
+  max-height: 700px;
+  display: flex;
+  gap: 40px;
+}
+
+.text-container {
+  align-self: center;
+  width: 50%;
+}
+
+.image-container {
+  align-self: center;
+}
+
+.image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  max-height: 718px;
+  max-width: 813px;
+}
+
+.image {
+  width: 80%;
+  height: auto;
+  margin-top: auto;
+}
+
+// Стили для текста и кнопок
+.title {
+  margin-right: 52px;
+}
+
+.title-underline {
+  margin-bottom: 30px;
+}
+
+.description-text {
+  margin-bottom: 70px;
+}
+.training-btn {
+  width: 50%;
+}
+
+.coming-block {
+  margin-bottom: 30px;
+}
+
+// Стили для кнопок и их контейнеров
+.buttons-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+// Стили для мобильной версии
+@media (max-width: 959px) {
+  .page-container {
+    height: 100%;
+    padding: 0px 20px 20px 20px;
+  }
+
+  .text-container,
+  .image-container {
+    width: 100% !important;
+  }
+
+  .content-container {
+    gap: 30px;
+    flex-direction: column;
+  }
+
+  .training-btn {
+    margin-top: auto;
+    width: 100%;
+    padding-top: 8px;
+  }
+
+  .title {
+    margin-right: 0px;
+  }
+
+  .image-wrapper {
+    padding: 0;
+    min-height: 240px;
+    min-width: 342px;
+  }
+
+  .title-underline {
+    margin-bottom: 12px;
+  }
+
+  .description-text {
+    margin-bottom: 0px;
+  }
+
+  .container {
+    padding: 0 12px;
+  }
+
+  .line {
+    width: 140px;
+  }
+
+  .coming-block {
+    margin-bottom: 16px;
+  }
+
+  .image {
+    width: 240px;
+    height: 240px;
+    margin-top: auto;
+  }
+
+  .buttons-container {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    gap: 12px;
+  }
+
+  .buttons-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .button {
+    white-space: nowrap;
+  }
+}

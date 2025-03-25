@@ -1,0 +1,262 @@
+.short-meeting-card {
+  max-width: 356px;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(var(--v-theme-background));
+
+  &.ends_at_18 {
+    transform: translateY(-12px);
+    &:has(.m540) {
+      transform: translateY(0px);
+      height: calc(100% - 12px)
+    }
+  }
+
+  :deep(.card-header) {
+    padding: 12px 12px 0px 12px;
+    // так лучше?
+    // margin-bottom: 0px;
+
+    &.m15 {
+      padding: 1px 12px 0px 18px;
+      margin: -5px;
+      max-height: fit-content;
+      @media screen and (min-width: 960px) {
+        padding: 3px 12px 0px 18px;
+        margin-top: -5px;
+        &:has(.ellipsis-menu) {
+          max-height: 21px;
+        } 
+      }
+      &:has(.mdi-dots-horizontal) {
+        margin: -6px;
+      }
+      .title {
+        font-size: 10px;
+        font-weight: 600 !important;
+        letter-spacing: 0.01em;
+      }
+    }
+    &.m30 {
+      padding: 9px 12px 0px 16px;
+      margin: -7px -6px;
+
+      @media screen and (min-width: 960px) {
+        padding: 7px 12px 0px 18px;
+      }
+
+      .title {
+        font-size: 14px;
+      }
+    }
+    &.m45 {        
+      padding: 0px 12px 0px 12px;
+
+      @media screen and (max-width: 960px) {
+        padding-top: 2px;
+      }
+    }
+    &.m60 {
+      padding-block: 4px;
+    }
+    &.m75 {
+      padding: 8px 12px 0px 12px
+    }
+    &.m90, &.m105 {
+      padding: 4px 12px 0px 12px;
+
+      @media screen and (max-width: 960px) {
+        padding-top: 8px;
+      }
+    }
+  }
+
+
+
+  :deep(.meeting-card) {
+    overflow: hidden;
+    height: calc(100% - 27px - 12px);
+    position: relative;
+    padding-left: 12px;
+    padding-right: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    .card-time {
+      margin-bottom: 6px;
+    }
+
+    .additional-participants {
+      background-color:rgb(var(--v-theme-addition));
+      color: rgb(var(--v-theme-background));
+      width: 28px;
+      height: 28px;
+      font-size: 13px;
+      @media screen and (min-width: 960px) {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 10px;
+      background: linear-gradient(
+        to bottom,
+        transparent,
+        rgb(var(--v-theme-background))
+      );
+      pointer-events: none;
+    }
+  }
+
+  .card-time {
+    color: rgb(var(--v-theme-secondary));
+  }
+}
+
+.short-meeting-card:has(.m45) .meeting-card {
+    overflow: visible;
+    font-size: 12px;
+    &::after {
+      background: none;
+    }
+    @media screen and (min-width: 960px) {
+      font-size: 11px;
+    }
+} 
+.short-meeting-card:has(.m60) .meeting-card  {
+  &::after {
+    background: none;
+  }
+  .card-time {
+    margin-top: -5px;
+    font-size: 14px;
+    @media screen and (max-width: 960px) {
+      margin-top: 5px;
+    }
+  }
+
+} 
+.short-meeting-card:has(.m75) {
+
+  @media screen and (max-width: 959px) {
+    .card-time {
+      font-size: 14px;
+      padding-block: 18px;
+    }
+    :deep(.card-time) {
+      margin-bottom: 2px;
+    }
+    .meeting-card::after {
+      display: none;
+    }
+  }
+  @media screen and (min-width: 960px) {
+    .card-time {
+      font-size: 14px;
+      margin-top: 10px;
+    }
+  }
+} 
+.short-meeting-card:has(.m90),
+.short-meeting-card:has(.m105) {
+  @media screen and (min-width: 960px) {
+    .card-time {
+      font-size: 12px;
+    }
+    :deep(.card-time) {
+      margin-bottom: 2px;
+    }
+    .meeting-card::after {
+      display: none;
+    }
+    --size: 24px;
+    :deep(.creator-info) {
+      font-size: 12px;
+    }
+    :deep(.participant-avatars),.additional-participants  {
+      max-height: var(--size);
+    }
+    .additional-participants {
+      width: var(--size);
+      font-size: 12px;
+    }
+    :deep(.avatar-container) {
+      max-width: fit-content;
+      max-height: fit-content;
+      margin-right: 4px;
+      .v-avatar {
+        max-width: var(--size);
+        max-height: var(--size);
+      }
+    }
+  }
+} 
+
+.short-meeting-card:has(.m105) {
+
+    :deep(.card-time) {
+      margin-block: 12px;
+      @media screen and (min-width: 960px) {
+      margin-block: 8px;
+      }
+  }
+}
+
+
+
+.full-name-container {
+  position: relative;
+  display: inline-block;
+  max-width: 22vh;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.users {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-bottom: 16px;
+  gap: 20px;
+}
+
+.participant-avatars {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  > .avatar-container {
+    position: relative;
+    margin-left: -12px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
+
+.additional-participants {
+  width: 36px;
+  height: 36px;
+  background-color: rgb(var(--v-theme-addition));
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-left: -12px;
+}
+
+.creator-info {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

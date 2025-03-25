@@ -1,0 +1,185 @@
+.container {
+  padding: 0px 20px 0px 20px;
+  @media screen and (min-width: 960px) {
+    padding: 0px 30px 0px 30px;
+  }
+}
+.filters_container {
+  padding: 20px 0px 16px 0px;
+  @media screen and (min-width: 960px) {
+    padding: 38px 0px 16px 0px;
+  }
+  .selects_container {
+    align-items: center;
+  }
+}
+
+.user-table {
+  :deep(.v-data-table__td) {
+    max-width: fit-content;
+    overflow: clip;
+    text-overflow: ellipsis;
+
+    @media screen and (max-width: 959px) {
+      padding-left: 8px;
+      padding-right: 28px;
+    }
+  }
+  .table-email {
+    overflow: clip;
+    text-overflow: ellipsis;
+    max-width: 12vw;
+  }
+  .table-soles {
+    overflow: clip;
+    text-overflow: ellipsis;
+    max-width: 20vw;
+  }
+  .full-name-container {
+    overflow: clip;
+    text-overflow: ellipsis;
+    max-width: 25vw;
+    @media screen and (max-width: 959px) {
+      max-width: min(50ch, 50vw);
+    }
+  }
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+  width: calc(100% + 20px);
+  max-height: 100%;
+  margin-bottom: -12px;
+  height: calc(100vh - 170px);
+  :deep(.v-data-table__td) .text-no-wrap {
+    overflow: clip;
+    text-overflow: ellipsis;
+    @media screen and (max-width: 959px) {
+      font-size: 14px;
+    }
+  }
+  @media screen and (min-width: 960px) {
+    height: calc(100vh - var(--v-layout-py) * 3 - var(--v-header-h) - 106px);
+    :deep(.v-data-table__tr) {
+      td:first-child {
+        padding: 12px 0px 12px 0px !important;
+      }
+    }
+    :deep(.v-data-table__th:first-of-type),
+    :deep(.user_info) {
+      padding-left: 8px;
+    }
+  }
+}
+.v-table--fixed-height > :deep(.v-table__wrapper) {
+  overflow-x: clip;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.custom-card {
+  background-color: #212121;
+  color: #f2f2f2;
+  padding: 20px;
+  border-radius: 10px;
+}
+.search-input {
+  margin-right: 0px !important;
+}
+
+.custom-search {
+  margin-bottom: 20px;
+  max-width: 250px;
+
+  .v-field {
+    background-color: #2b2b2b;
+    color: #f2f2f2;
+    border-radius: 5px;
+  }
+
+  .v-field__input {
+    color: #f2f2f2;
+  }
+
+  .v-field__outline {
+    color: #444;
+  }
+}
+.user-info-card {
+  position: fixed;
+  width: 350px;
+  z-index: 1000;
+  background-color: #1e1e1e;
+  color: #f2f2f2;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.user-info-card .v-card-title {
+  background-color: #2b2b2b;
+  color: #f2f2f2;
+  font-size: 1.2vw;
+  display: flex;
+  justify-content: space-between;
+
+  .v-icon {
+    font-size: 1.2vw;
+  }
+}
+
+.user-info-card .v-card-text {
+  padding-top: 20px;
+}
+
+.user-info-card .v-avatar {
+  border: 2px solid #f2f2f2;
+
+  .headline {
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
+
+.permissions-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 20px;
+  width: 80%;
+  margin: auto;
+}
+
+.role-permissions {
+  position: relative;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  padding-top: 30px;
+  min-width: 300px;
+  flex: 1;
+}
+
+.cancel-btn {
+  color: rgb(var(--v-theme-gray));
+  text-decoration: underline 1px solid rgb(var(--v-theme-gray));
+}
+
+.role-name {
+  position: absolute;
+  top: -12px;
+  left: 20px;
+  background-color: rgb(33, 33, 33);
+  padding: 0 8px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.user-cell-wrapper {
+  position: relative;
+}

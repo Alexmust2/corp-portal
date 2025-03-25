@@ -1,0 +1,112 @@
+.full-meeting-card-overlay {
+    position: fixed;
+    top: 0;
+    left: auto;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    @media screen and (min-width: 960px) {
+        position: absolute;
+        background-color: transparent;
+    }
+
+    &.open {
+        left: 0;
+    }
+}
+
+.full-meeting-card {
+    transform: translateX(200%);
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    z-index: 11;
+    position: absolute;
+    top: 15%;
+    right: 20px;
+    bottom: 15%;
+    left: 20px;
+    opacity: 0;
+    background-color: rgb(var(--v-theme-background));
+    padding: 20px;
+    overflow: auto;
+    height: min(fit-content, 600px);
+
+    :deep(.card-header) {
+        .title {
+            white-space: normal;
+        }
+    }
+
+    .info-item span {
+        font-weight: 400;
+    }
+
+    .shot-more {
+        cursor: pointer;
+        color: rgb(var(--v-theme-gray));
+        text-transform: capitalize;
+        text-decoration: underline;
+        height: 36px;
+        text-align: left;
+    }
+
+    @media screen and (min-width: 960px) {
+        top: 10%;
+        right: 0;
+        bottom: auto;
+        height: fit-content;
+        max-height: 70%;
+        margin: 140px 16px 0 0;
+        left: auto;
+        width: 500px;
+    }
+
+    &.open {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    > :deep(.card-header) {
+        margin-bottom: 16px;
+    }
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    overflow: hidden;
+}
+
+.info {
+    >.info-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 12px;
+        color: rgb(var(--v-theme-secondary));
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.participants {
+    >h2 {
+        margin-bottom: 16px;
+    }
+
+    >.participants-list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        >.participant {
+            display: flex;
+            gap: 7.5px;
+            align-items: center;
+        }
+    }
+}

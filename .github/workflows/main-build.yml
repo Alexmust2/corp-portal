@@ -1,0 +1,28 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install sshpass
+        run: sudo apt-get update && sudo apt-get install -y sshpass
+
+      - name: Connect to server and perform actions
+        env:
+          SSH_PASSWORD: ${{ secrets.SSH_PASSWORD }}
+          USER: ${{ secrets.USER }}
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+        run: |
+          sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no $USER@$REMOTE_HOST "
+            cd /var/www/www-root/data/www/corp.artis21.ru/frontend &&
+            git pull origin main &&
+            docker-compose down &&
+            docker-compose -p corp_frontend up --build -d"

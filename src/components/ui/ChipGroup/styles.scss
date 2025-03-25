@@ -1,0 +1,15 @@
+.c-chip-group {
+  display: flex;
+  gap: 12px;
+  flex-wrap: nowrap;
+  overflow: auto;
+  -ms-overflow-style: none; // IE and Edge
+  scrollbar-width: none;
+}
+.c-chip-group::-webkit-scrollbar {
+  display: none;
+}
+
+.notificationContainer{
+  scrollbar-width: none; 
+}

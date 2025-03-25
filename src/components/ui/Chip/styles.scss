@@ -1,0 +1,92 @@
+.c-chip {
+  height: 36px;
+  border-radius: 32px;
+  user-select: none;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap; 
+  
+  @media screen and (min-width: 960px) {
+    height: 42px;
+  }
+
+  &.clickable {
+    cursor: pointer;
+  }
+
+  &.selected {
+    background-color: rgb(var(--v-theme-accent));
+    color: rgb(var(--v-theme-background));
+    font-weight: 600;
+  }
+
+  @mixin chip-active($color-variable) {
+    background-color: rgb(var(--#{$color-variable}));
+    color: rgb(var(--v-theme-background));
+
+
+    &:not(.selected):hover {
+      background-color: rgba(var(--#{$color-variable}), 0.8);
+    }
+
+    &:not(.selected):active {
+      background-color: rgb(var(--#{$color-variable}), 0.1);
+      color: rgb(var(--#{$color-variable}));
+    }
+  }
+
+  @mixin chip-inactive($color-variable) {
+    background-color: rgb(var(--#{$color-variable}), 0.1);
+    color: rgb(var(--#{$color-variable}));
+  }
+
+  @mixin chip-white-base {
+    background-color: rgb(var(--v-theme-background));
+    border: 1px solid rgb(var(--v-theme-tertiary));
+    box-shadow: var(--v-shadow-input);
+  }
+
+  &--accent {
+    @include chip-active('v-theme-accent');
+  }
+
+  &--accent-inactive {
+    @include chip-inactive('v-theme-accent');
+  }
+
+  &--red {
+    @include chip-active('v-theme-red');
+  }
+
+  &--red-inactive {
+    @include chip-inactive('v-theme-red');
+  }
+
+  &--secondary {
+    @include chip-active('v-theme-addition');
+  }
+
+  &--secondary-inactive {
+    @include chip-inactive('v-theme-addition');
+  }
+
+  &--primary {
+    @include chip-white-base;
+
+    &:not(.selected):hover {
+      background-color: rgb(var(--v-theme-addition));
+      color: rgb(var(--v-theme-background));
+    }
+
+    &:not(.selected):active {
+      background-color: rgb(var(--v-theme-accent));
+      color: rgb(var(--v-theme-background));
+    }
+  }
+
+  &--primary-inactive {
+    @include chip-white-base;
+  }
+}
