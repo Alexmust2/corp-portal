@@ -9,7 +9,6 @@ interface NotificationDataProps {
   title: string;
   message: any;
   status: any;
-  // TODO
 }
 
 let socket: Socket | null = null;
